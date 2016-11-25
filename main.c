@@ -8,7 +8,8 @@ void intercambiar(char cad1[N], char cad2[N], int longitud);
 void rotarDerecha(char cadena[N], int veces, int longitud);
 
 int main() {
-    printf("hola mundo\n");
+    char cadena1[N];
+    char cadena2[N];
     return 0;
 }
 
