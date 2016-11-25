@@ -1,22 +1,27 @@
 #include <stdio.h>
 #define N 11
 
-int longitud(char cadena[]);
-void convertirMayus(char cadena[]);
-void concatenar(char origen[], char destino[]);
-void intercambiar(char cad1[], char cad2[], int longitud);
-void rotarDerecha(char cadena[], int veces, int longitud);
+int longitud(char cadena[N]);
+void convertirMayus(char cadena[N]);
+void concatenar(char origen[N], char destino[N]);
+void intercambiar(char cad1[N], char cad2[N], int longitud);
+void rotarDerecha(char cadena[N], int veces, int longitud);
 
 int main() {
     printf("hola mundo\n");
     return 0;
 }
 
-int longitud(char cadena[]){
-
+int longitud(char cadena[N]){
+    int i;
+    i = 0;
+    while(i < N && cadena[i] != '0'){
+        i++;
+    }
+    return i;
 }
 
-void convertirMayus(char cadena[]){
+void convertirMayus(char cadena[N]){
     int i, distancia;
     distancia = 'a' - 'A';
     i = 0;
@@ -30,7 +35,7 @@ void convertirMayus(char cadena[]){
 }
 }
 
-void concatenar(char origen[], char destino[]){
+void concatenar(char origen[N], char destino[N]){
     int longOrigen, longDestino, i;
     longOrigen = longitud(origen);
     longDestino = longitud(destino);
@@ -40,7 +45,7 @@ void concatenar(char origen[], char destino[]){
     }
 }
 
-void intercambiar(char cad1[], char cad2[], int longitud){
+void intercambiar(char cad1[N], char cad2[N], int longitud){
     char aux;
     int i;
 
@@ -53,7 +58,7 @@ void intercambiar(char cad1[], char cad2[], int longitud){
     cad2[i] = '\0';
 }
 
-void rotarDerecha(char cadena[], int veces, int longitud){
+void rotarDerecha(char cadena[N], int veces, int longitud){
     int i, j, k;
     char aux;
 
