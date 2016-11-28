@@ -36,7 +36,6 @@ int main() {
     printf("\n");
     rotarDerecha(cadena1, 3, longitud(cadena1));
     rotarDerecha(cadena2, 3, longitud(cadena2));
-    printf("\n");
     concatenar(cadena1, cadena2);
     for (i = 0; i < longitud(cadena2); ++i) {
         printf("%c", cadena2[i]);
@@ -97,13 +96,13 @@ void rotarDerecha(char cadena[N], int veces, int longitud){
     char aux;
 
     for(j = 1; j <= veces; j++){
-        for(k = 0; k < N; k++){
+        for(k = 0; k < longitud; k++){
             printf("%c", cadena[k]);
         }
         printf("\n");
         aux = cadena[longitud - 1];
-        for (i = longitud - 1; i > 0; ++i) {
-            cadena[j] = cadena[j - 1];
+        for (i = longitud - 1; i > 0; --i) {
+            cadena[i] = cadena[i - 1];
         }
         cadena[0] = aux;
     }
