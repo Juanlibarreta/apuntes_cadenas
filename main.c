@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 11
+#define N 50
 
 int longitud(char cadena[N]);
 void convertirMayus(char cadena[N]);
@@ -11,7 +11,17 @@ int main() {
     int i;
     char cadena1[] = "hola";
     char cadena2[] = "nube";
-    char cadena3[];
+    intercambiar(cadena1, cadena2,longitud(cadena1));
+    for (i = 0; i < 5; ++i) {
+        printf("%c", cadena1[i]);
+
+    }
+    printf("\n");
+    for (i = 0; i < 5; ++i) {
+        printf("%c", cadena2[i]);
+
+    }
+    printf("\n");
     convertirMayus(cadena1);
     convertirMayus(cadena2);
     for (i = 0; i < 5; ++i) {
@@ -23,13 +33,22 @@ int main() {
         printf("%c", cadena2[i]);
 
     }
+    printf("\n");
+    rotarDerecha(cadena1, 3, longitud(cadena1));
+    rotarDerecha(cadena2, 3, longitud(cadena2));
+    printf("\n");
+    concatenar(cadena1, cadena2);
+    for (i = 0; i < longitud(cadena2); ++i) {
+        printf("%c", cadena2[i]);
+
+    }
     return 0;
 }
 
 int longitud(char cadena[N]){
     int i;
     i = 0;
-    while(i < N && cadena[i] != '0'){
+    while(i < N && cadena[i] != '\0'){
         i++;
     }
     return i;
@@ -65,7 +84,7 @@ void intercambiar(char cad1[N], char cad2[N], int longitud){
     int i;
 
     for(i = 0; i < longitud; i++){
-        aux = cad2[i];
+        aux = cad1[i];
         cad1[i] = cad2[i];
         cad2[i] = aux;
     }
