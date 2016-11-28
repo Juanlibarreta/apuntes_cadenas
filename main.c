@@ -8,8 +8,21 @@ void intercambiar(char cad1[N], char cad2[N], int longitud);
 void rotarDerecha(char cadena[N], int veces, int longitud);
 
 int main() {
-    char cadena1[N];
-    char cadena2[N];
+    int i;
+    char cadena1[] = "hola";
+    char cadena2[] = "nube";
+    char cadena3[];
+    convertirMayus(cadena1);
+    convertirMayus(cadena2);
+    for (i = 0; i < 5; ++i) {
+        printf("%c", cadena1[i]);
+
+    }
+    printf("\n");
+    for (i = 0; i < 5; ++i) {
+        printf("%c", cadena2[i]);
+
+    }
     return 0;
 }
 
@@ -22,18 +35,19 @@ int longitud(char cadena[N]){
     return i;
 }
 
-void convertirMayus(char cadena[N]){
+void convertirMayus(char cadena[]){
     int i, distancia;
     distancia = 'a' - 'A';
     i = 0;
 
-    while(cadena[i]){
+    while('\0' != cadena[i]){
         if(cadena[i] >= 'a' && cadena[i] <= 'z'){
             cadena[i] = cadena[i] - distancia;
         }else{
             cadena[i] = cadena[i];
         }
-}
+        i++;
+    }
 }
 
 void concatenar(char origen[N], char destino[N]){
